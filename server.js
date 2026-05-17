@@ -194,6 +194,10 @@ app.delete("/api/admin/products/:id", requireAdmin, (req, res) => {
   res.json({ success: true });
 });
 
+app.get("/admin/login.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "admin", "login.html"));
+});
+
 app.get("/admin", requireAdmin, (req, res) => {
   res.sendFile(path.join(__dirname, "public", "admin", "admin.html"));
 });
