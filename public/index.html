@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Компьютерный Магазин</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">Компьютерный Магазин</a>
+      <nav class="nav">
+        <a href="#catalog">Товары</a>
+        <a href="#about">О магазине</a>
+        <a href="#contacts">Контакты</a>
+        <button class="btn btn-small" onclick="scrollToSection('contacts')">Связаться</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="badge">Игровые ПК • Комплектующие • Периферия</p>
+          <h1>Игровые компьютеры и сборки под ваши задачи</h1>
+          <p class="hero-text">
+            Подберём готовый ПК, соберём компьютер под бюджет, поможем выбрать видеокарту,
+            процессор, монитор, клавиатуру, мышь и аксессуары.
+          </p>
+          <div class="hero-actions">
+            <button class="btn" onclick="openOrderModal('Консультация по заказу')">Заказать</button>
+            <button class="btn btn-outline" onclick="scrollToSection('order')">Оставить заявку</button>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="pc-glow"></div>
+          <h2>RTX / Ryzen / Intel</h2>
+          <p>Сбалансированные сборки для игр, работы и стриминга.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container info-grid">
+        <div>
+          <p class="badge">О магазине</p>
+          <h2>Подбираем технику под реальные задачи клиента</h2>
+          <p>
+            Компьютерный магазин занимается продажей компьютеров, комплектующих, периферии
+            и аксессуаров. У нас можно подобрать готовый ПК, собрать компьютер под задачи
+            клиента, купить видеокарты, процессоры, мониторы, клавиатуры, мыши и другую технику.
+          </p>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <h3>Готовые ПК</h3>
+            <p>Игровые конфигурации с оптимальным балансом цены и производительности.</p>
+          </div>
+          <div class="feature">
+            <h3>Сборка на заказ</h3>
+            <p>Подбор комплектующих под игры, работу, монтаж, 3D и стриминг.</p>
+        </div>
+    </section>
+
+  <section id="catalog" class="section dark-section">
+  <div class="container">
+    <p class="badge">Каталог</p>
+    <h2>Готовые игровые компьютеры</h2>
+
+    <div class="catalog" id="catalogContainer"></div>
+  </div>
+</section>
+
+    <section id="order" class="section">
+      <div class="container form-layout">
+        <div>
+          <p class="badge">Заявка</p>
+          <h2>Оставить заявку на покупку</h2>
+          <p>
+            Укажите товар, имя и контакты. В будущем эту форму можно подключить к CRM,
+            чтобы автоматически создавать сделки и заявки.
+          </p>
+        </div>
+
+        <form class="form" id="orderForm">
+          <input type="text" name="name" placeholder="Ваше имя" required />
+          <input type="tel" name="phone" placeholder="Телефон" required />
+          <input type="email" name="email" placeholder="Email" />
+          <input type="text" name="product" id="productInput" placeholder="Какой товар хотите купить" />
+          <textarea name="comment" placeholder="Комментарий к заказу"></textarea>
+          <button class="btn" type="submit">Оставить заявку</button>
+          <p class="form-note" id="formMessage"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contacts" class="section contacts">
+      <div class="container">
+        <p class="badge">Контакты</p>
+        <h2>Свяжитесь с нами</h2>
+
+        <div class="contact-grid">
+          <div>Телефон: <a href="tel:+79990000000">+7 999 000-00-00</a></div>
+          <div>Email: <a href="mailto:sales@pcstore.ru">sales@pcstore.ru</a></div>
+          <div>Telegram: <a href="https://t.me/pcstore" target="_blank">@pcstore</a></div>
+          <div>Адрес: г. Москва, ул. Примерная, 10</div>
+          <div>Режим работы: ежедневно с 10:00 до 20:00</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Компьютерный Магазин</p>
+      <p>Игровые ПК, комплектующие, периферия и аксессуары.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeOrderModal()">×</button>
+      <h2>Заказать товар</h2>
+      <p id="modalProductName"></p>
+      <button class="btn" onclick="goToOrderForm()">Перейти к заявке</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
